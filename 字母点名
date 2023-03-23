@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+             int i=0,k,ch;
+             int num[5]={0};//存储元音字母数目的一维数组
+             char alpha[ ]={ 'a', 'e', 'i', 'o', 'u'}, in[80];
+             while((in[i++] = getchar())!='? ') 		
+                ;//输入一个以？结尾的字符串
+             in[i] = '\0'；//字符串数组的最后一个数据
+             i = 0;
+             while(in[i]){                    	
+                  for(k=0; k<5; k++)
+                       if(in[i] == alpha[k]){
+                            num[k]++;
+                            break;
+                       }
+                  i++;
+             }//分别统计输入的字符串中aeiou的个数
+             for(k=0;k<5;k++)        			
+                  if(num[k])
+                       printf("%c%d", alpha[k],num[k]);
+             printf("\n");
+  return(0);
+}
